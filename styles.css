@@ -603,6 +603,63 @@ h3 {
   text-transform: uppercase;
 }
 
+.toggle-list {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 16px;
+  padding: 8px 16px;
+  border: 1px solid var(--line-dark);
+  border-radius: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.toggle-list:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.pub-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+}
+
+.pub-filter {
+  appearance: none;
+  padding: 6px 14px;
+  border: 1px solid var(--line-dark);
+  border-radius: 0;
+  background: var(--bg);
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pub-filter:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.pub-filter.is-active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.pub[hidden],
+.timeline li[hidden] {
+  display: none;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
