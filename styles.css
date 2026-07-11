@@ -402,8 +402,8 @@ h3 {
 
 .research-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 }
 
 .research-grid article {
@@ -685,6 +685,10 @@ h3 {
   }
 
   .people-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .research-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

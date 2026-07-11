@@ -1,0 +1,545 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{amsmath}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[table]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{needspace}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+% --- Fonts (Overleaf-friendly) ---
+% Body serif + section-heading sans, both from the Adobe Source family.
+% These packages load fontspec automatically and work out-of-the-box on Overleaf (XeLaTeX).
+\usepackage[default]{sourceserifpro}  % body text -> Source Serif Pro
+\usepackage{sourcesanspro}            % provides \sfdefault (Source Sans) for headings
+\usepackage{fontspec}
+% kotex must come AFTER the Latin font packages so Korean is handled cleanly.
+\usepackage{kotex}
+\setmainhangulfont{Noto Serif CJK KR}
+% Heading font = the sans family provided by sourcesanspro (\sfdefault).
+% Using the package's own family avoids any dependence on raw font-file names.
+\newcommand{\headingfont}{\sffamily}
+
+\definecolor{YonseiBlue}{HTML}{003876}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=YonseiBlue
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\headingfont\raggedright\large\bfseries\color{YonseiBlue}
+}{}{0em}{}[{\color{YonseiBlue}\titlerule[0.8pt]}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\renewcommand{\labelitemii}{$\circ$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       CV STARTS HERE                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\LARGE Junsuk Choe (최준석) | Ph.D.}}
+\end{tabular*}
+\rule{\textwidth}{0.5mm}
+
+\parbox{0.5\textwidth}{
+\begin{tabbing}
+\hspace{3cm} \= \hspace{4cm} \= \kill
+\hphantom{} \textbf{Associate Professor at Sogang University}\\
+\hphantom{} {\small Department of Computer Science and Engineering}\\
+\hphantom{} {\small Department of Artificial Intelligence \textit{(Affiliated)}}\\
+\hphantom{} {\small Graduate School of AI$\cdot$SW \textit{(Affiliated)}}
+\end{tabbing}}
+\hfill
+\parbox{0.5\textwidth}{
+\begin{tabbing}
+\hspace{2.2cm} \= \hspace{4cm} \= \kill
+Email: \> \href{mailto:jschoe@sogang.ac.kr}{jschoe@sogang.ac.kr}\\
+Office: \> AS-913\\
+Phone: \> 02-705-8495\\
+\href{https://sites.google.com/site/junsukchoe}{\texttt{sites.google.com/site/junsukchoe}}
+\end{tabbing}}
+
+\vspace{-0.7cm}
+
+\begin{flushleft}
+{\small As of June 2026 (Google Scholar): Citations 11,189 \quad h-index 15 \quad i10-index 19}
+\end{flushleft}
+
+%-----------APPOINTMENTS-----------
+\section{Appointments}
+
+\textbf{Associate Professor} \hfill Sep 2025 -- Present\\
+Department of Computer Science and Engineering, Sogang University \hfill \textit{Seoul, South Korea}
+
+\textbf{Assistant Professor} \hfill Sep 2021 -- Aug 2025\\
+Department of Computer Science and Engineering, Sogang University \hfill \textit{Seoul, South Korea}
+
+\vspace{0.25cm}
+
+\textbf{Program Chair (전공주임)} \hfill Feb 2022 -- Present\\
+Graduate School of AI$\cdot$SW, Sogang University \hfill \textit{Seoul, South Korea}
+
+\vspace{0.25cm}
+
+\textbf{Visiting Scholar} \hfill Jul 2023\\
+T\"ubingen AI Center, University of T\"ubingen \hfill \textit{Baden-W\"urttemberg, Germany}\\
+Hosted by \href{https://coallaoh.github.io/}{Prof. Seong Joon Oh} and \href{https://www.eml-unitue.de/}{Prof. Zeynep Akata}
+
+\vspace{0.25cm}
+
+\textbf{Research Scientist} \hfill May 2020 -- Aug 2021\\
+NAVER AI Lab \hfill \textit{Seongnam, South Korea}\\
+Research focus: Advanced Visual Representation Learning
+
+\vspace{0.25cm}
+
+\textbf{Graduate Research Assistant} \hfill Sep 2013 -- May 2020\\
+Computer Vision and Machine Learning Lab., Yonsei University \hfill \textit{Seoul, South Korea}\\
+Supervisor: \href{https://kaist-cvml.github.io/}{Prof. Hyunjung Shim}
+
+%-----------EDUCATION-----------
+\section{Education}
+
+\textbf{Ph.D. in Engineering} \hfill Aug 2020\\
+Yonsei University, School of Integrated Technology \hfill Seoul, South Korea\\
+Thesis: \textit{Weakly Supervised Object Localization, What Are the True Limitations?}\\
+Advisor: \href{https://kaist-cvml.github.io/}{Prof.\ Hyunjung Shim}
+
+\vspace{0.25cm}
+
+\textbf{B.S. in Engineering} \hfill Aug 2013\\
+Yonsei University, School of Electrical and Electronic Engineering \hfill Seoul, South Korea
+
+%-----------RESEARCH INTERESTS-----------
+\section{Research Interests}
+
+My research centers on large multimodal foundation models---vision--language, video--language, and, increasingly, agentic models that plan and act in digital and physical environments---and aims to make them sustainable to manage and reliable to deploy without costly retraining. I pursue this goal along three complementary directions: knowledge lifecycle management, faithful and efficient inference, and agentic and embodied AI.
+
+\vspace{0.25cm}
+
+\textbf{Knowledge Lifecycle Management: Acquisition, Retention, and Forgetting.}
+I develop methods for selectively modifying the knowledge stored in large models, spanning machine unlearning and continual learning. Motivated by the observation that post-hoc removal often suppresses rather than truly erases knowledge, I am increasingly interested in model structures in which knowledge is localized and composable, so that editing becomes a matter of adding or detaching components rather than disentangling intertwined parameters.
+
+\vspace{0.25cm}
+
+\textbf{Faithful and Efficient Inference: Grounding and Compression.}
+I work on making multimodal model outputs trustworthy and cheap to serve. On the faithfulness side, I study hallucination and other failures that emerge as inputs grow richer and more composite---spanning multiple images, modalities, or turns---asking how to measure whether an output is grounded in the intended evidence and how to correct it when it is not. On the efficiency side, I study how inference-time compression techniques that work well for simple inputs break down as inputs grow more complex, and how to design compression that scales with input structure rather than against it.
+
+\vspace{0.25cm}
+
+\textbf{Agentic and Embodied AI: Acting in Digital and Physical Environments.}
+As foundation models move from passive perception to autonomous action, I am beginning to explore how they can plan, use tools, and act reliably---whether as digital agents navigating multi-step tasks or as embodied vision--language--action models operating in the physical world. This direction extends my work on knowledge lifecycle management and faithful inference to settings where models must update their skills over time and ground their decisions in real-world feedback rather than static labels.
+
+
+%-----------TEACHING-----------
+\section{Teaching Experience}
+Extensive teaching record with up to 13 credits per semester in recent years, covering 37 course sessions from CS fundamentals to advanced AI.
+
+\vspace{0.3cm}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} p{11cm} r @{}}
+\toprule
+\textbf{Course Title} & \textbf{Semesters} \\
+\midrule
+\rowcolor[gray]{0.95} \multicolumn{2}{l}{\textit{Graduate Level}} \\
+\texttt{CSE6100} Deep Learning & Spring 2024, 2026 \\
+\texttt{GITA405} Transformers and LLMs & Spring 2026 \\
+\texttt{CSE6506} Topics in Computational Linguistics & Fall 2025 \\
+\texttt{AIE6681} Topics in Digital Human and Entertainment & Spring 2025 \\
+\texttt{CSE6517} Topics in Representation Learning & Fall 2023, 2024 \\
+\texttt{GITA385} Introduction to Deep Learning & Spring/Fall 2023--2026 (6$\times$) \\
+\texttt{GITA388} Pattern Recognition & Spring/Fall 2023--2025 (4$\times$) \\
+\texttt{CSE6528} Bigdata Computing (Capstone Design) & Fall 2022--2025 \\
+\midrule
+\rowcolor[gray]{0.95} \multicolumn{2}{l}{\textit{Undergraduate Level}} \\
+\texttt{CSE4130} Introduction to Machine Learning & Spring 2023--2026 \\
+\texttt{COR1010} Introduction to AI Programming & Spring 2024--2026 \\
+\texttt{CSE4014} Introduction to Deep Learning & Fall 2024, 2025 \\
+\texttt{CSEG321} Introduction to Natural Language Processing & Fall 2023 \\
+\texttt{CSE3080} Data Structure & Spring 2022, 2023 \\
+\texttt{CSE2003} Computer Programming I & Spring 2022 \\
+\texttt{CSE4120} Fundamentals of Compiler Construction & Fall 2021, 2022 \\
+\texttt{CSE3015} Fundamentals of Digital Circuit & Fall 2021 \\
+\bottomrule
+\end{tabular*}
+
+\vspace{.5em}
+%-----------GRANTS-----------
+\section{Grants}
+
+\subsection*{Research Grants}
+\begin{itemize}[leftmargin=1.2em, itemsep=0.1em]
+    \item \textbf{(PI) 우수신진연구}, 한국연구재단(NRF). \hfill 2024--2027 \\
+    신뢰가능한 거대 시각 언어 모델을 위한 환각 문제 완화 방법 개발 - 데이터 수집, 평가, 학습 및 추론 관점에서 \\
+    \textit{Total Budget: 912,660,000 KRW}
+
+    \item \textbf{(Co-PI) 독자 AI 파운데이션 모델 프로젝트}, 정보통신기획평가원(IITP). \hfill 2025--2027 \\
+    정예 연구진 결집을 통한 초거대 LLM/VLM 고도화 및 아세안 언어 확장 기술 개발 (Upstage)
+
+    \item \textbf{(Co-PI) 글로벌인문사회융합연구지원사업}, 한국연구재단(NRF). \hfill 2024--2027 \\
+    AI와 VR을 활용한 몰입형 음악 교육 콘텐츠 개발 및 적용
+
+    \item \textbf{(PI) 기본연구}, 한국연구재단(NRF). \hfill 2023--2024 \\
+    포인트 레이블 기반 인스턴스 세그멘테이션을 위한 학습기술 개발
+
+    \item \textbf{(PI) 기본연구}, 한국연구재단(NRF). \hfill 2022--2024 \\
+    약지도기반 위치인식기술의 한계극복을 위한 네거티브샘플 수집활용기술 개발
+
+    \item \textbf{(PI) 한-독 연구협력 네트워크 구축사업}, 한국연구재단(NRF). \hfill 2023 \\
+    최소지도 및 설명가능성을 활용한 보다 강건한 시각인지기술 연구
+\end{itemize}
+
+\subsection*{Educational \& Institutional Grants}
+\begin{itemize}[leftmargin=1.2em, itemsep=0.1em]
+    \item \textbf{(Co-PI) 인공지능혁신대학원 (서강대학교)}, 정보통신기획평가원(IITP). \hfill 2026--2031
+    \item \textbf{(Co-PI) AI중심대학 (서강대학교)}, 정보통신기획평가원(IITP). \hfill 2026--2033
+    \item \textbf{(Co-PI) 생성AI 선도인재양성사업}, 정보통신기획평가원(IITP). \hfill 2025--2028
+    \item \textbf{(Co-PI) 미래형자동차 핵심기술 R\&D 전문인력양성사업}, 한국산업기술진흥원(KIAT). \hfill 2022--2027
+    \item \textbf{(Co-PI) SW중심대학 (서강대학교)}, 정보통신기획평가원(IITP). \hfill 2024--2025
+    \item \textbf{(Co-PI) 4단계 BK21 사업 (BrainKorea21 FOUR)}, 한국연구재단(NRF). \hfill 2021--2027
+\end{itemize}
+
+%-----------ACADEMIC SERVICES-----------
+\section{Academic Services}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}p{6.0cm} p{13.0cm}@{}}
+\textbf{Area Chair} & \textbf{NeurIPS} (2026), \textbf{ICLR} (2026), \textbf{COLM} (2025, 2026) \\
+\textbf{Journal Reviewer} & \textbf{TPAMI}, \textbf{IJCV} \\
+\textbf{Conference Reviewer} & \textbf{ML\&AI:} NeurIPS, ICML, ICLR, AAAI, AISTATS, CoLLAs \\
+ & \textbf{Vision:} CVPR, ICCV, ECCV, WACV, ACCV\\
+\textbf{Organization} & \textbf{Organizer}, Korean Conference on Computer Vision (KCCV), 2025--2026 \\
+ & \textbf{Organizer}, IEIE Summer/Winter School on Image Processing, 2023--2025 \\
+\end{tabular}
+
+%-----------HONORS-----------
+\section{Honors and Awards}
+
+\textbf{Sogang University Excellence in Teaching Award (Academic Year 2024)} \hfill 2025 \\
+\textit{Awarded to faculty members with outstanding educational achievements.}\\
+\vspace{0.1cm}
+
+\textbf{Sogang College of Engineering Young Fellow Award} \hfill 2023 \\
+\textit{Awarded annually to one young professor in the college to recognize excellence in research.}\\
+\vspace{0.1cm}
+
+\textbf{Sogang College of Engineering Outstanding Lecture Award} \hfill 2022 \\
+\textit{Awarded annually to one professor in the college to recognize excellence in teaching.}
+
+%-----------CONFERENCE PAPERS-----------
+\section{Conference Papers}
+\small{Bold text: Lab members, *: Co-first authors, \textdagger: Co-corresponding authors.}
+
+\begin{enumerate}[itemsep=5.5pt]
+
+    \item Seungho Eum, Ihjjoon Cho, Jeonghyeon Kim, \textbf{Junsuk Choe\textdagger}, Unsang Park\textdagger.
+    ``Rarr: Real-Time Attention-Driven Rain Removal With Hierarchical Scale-Aware Efficient Network,''
+    in the Proceedings of the International Conference on Pattern Recognition \text{(ICPR)}, 2026.
+
+    \item Sungwon Woo, \textbf{Dongjun Hwang}, Shiwon Kim, \textbf{Junsuk Choe}, Jongho Nang.
+    ``Training-Free Uncertainty-guided Logit Adjustment for Few-Shot Class-Incremental Learning,''
+    in the Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Findings \text{(CVPR Findings)}, 2026.
+
+    \item \textbf{Minyoung Lee}, \textbf{Yeji Park}, \textbf{Dongjun Hwang}, \textbf{Yejin Kim}, Seong Joon Oh, \textbf{Junsuk Choe}.
+    ``Enhancing Multi-Image Understanding through Delimiter Token Scaling,''
+    in the Proceedings of the International Conference on Learning Representations \text{(ICLR)}, 2026.
+
+    \item Inha Kang, Youngsun Lim, Seonho Lee, Jiho Choi, \textbf{Junsuk Choe}, Hyunjung Shim.
+    ``What ``Not'' to Detect: Negation-Aware VLMs via Structured Reasoning and Token Merging,''
+    in the Proceedings of the International Conference on Learning Representations \text{(ICLR)}, 2026.
+
+    \item \textbf{Dongjun Hwang}, \textbf{Yejin Kim}, \textbf{Minyoung Lee}, Seong Joon Oh, \textbf{Junsuk Choe}.
+    ``OVS Meets Continual Learning: Towards Sustainable Open-Vocabulary Segmentation,''
+    in the Proceedings of the Conference on Neural Information Processing Systems \text{(NeurIPS)}, 2025.
+
+    \item \textbf{Yejin Kim*}, Eunwon Kim*, Buru Chang\textdagger, \textbf{Junsuk Choe\textdagger}.
+    ``Improving Fisher Information Estimation and Efficiency for LoRA-based LLM Unlearning,''
+    in the Proceedings of the Conference on Language Modeling \text{(COLM)}, 2025.
+
+    \item \textbf{Hyo Seo Kim}, Dongyoon Han\textdagger, \textbf{Junsuk Choe\textdagger}.
+    ``NegMerge: Sign-Consensual Weight Merging for Machine Unlearning,''
+    in the Proceedings of the International Conference on Machine Learning \text{(ICML)}, 2025.
+
+    \item \textbf{Yeji Park*}, Deokyeong Lee*, \textbf{Junsuk Choe\textdagger}, Buru Chang\textdagger.
+    ``ConVis: Contrastive Decoding with Hallucination Visualization for Mitigating Hallucinations in Multimodal Large Language Models,''
+    in the Proceedings of the AAAI Conference on Artificial Intelligence \text{(AAAI)}, 2025.
+
+    \item Dongseob Kim*, Seungho Lee*, \textbf{Junsuk Choe}, Hyunjung Shim.
+    ``Weakly Supervised Semantic Segmentation for Driving Scenes,''
+    in the Proceedings of the AAAI Conference on Artificial Intelligence \text{(AAAI)}, 2024.
+
+    \item Cheolhyun Mun*, Sanghuk Lee*, Youngjung Uh, \textbf{Junsuk Choe}, Hyeran Byun.
+    ``Small Objects Matters in Weakly-supervised Semantic Segmentation,''
+    in the Proceedings of the IEEE Winter Conference on Applications of Computer Vision \text{(WACV)}, 2024.
+
+    \item Dongyoon Han*, \textbf{Junsuk Choe}*, Seonghyeok Chun, John Chung, Minsuk Chang, Sangdoo Yun, Jean Song, Seong Joon Oh.
+    ``Neglected Free Lunch--Learning Image Classifiers Using Annotation Byproducts,''
+    in the Proceedings of the International Conference on Computer Vision \text{(ICCV)}, 2023.
+
+    \item Jungbeom Lee, Seong Joon Oh, Sangdoo Yun, \textbf{Junsuk Choe}, Eunji Kim, Sungroh Yoon.
+    ``Weakly Supervised Semantic Segmentation using Out-of-Distribution Data,''
+    in the Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition \text{(CVPR)}, 2022.
+
+    \item Jae Myung Kim*, \textbf{Junsuk Choe*}, Zeynep Akata, Seong Joon Oh.
+    ``Keep CALM and Improve Visual Feature Attribution,''
+    in the Proceedings of the International Conference on Computer Vision \text{(ICCV)}, 2021.
+
+    \item Byeongho Heo, Sangdoo Yun, Dongyoon Han, Sanghyuk Chun, \textbf{Junsuk Choe}, Seong Joon Oh.
+    ``Rethinking Spatial Dimensions of Vision Transformers,''
+    in the Proceedings of the International Conference on Computer Vision \text{(ICCV)}, 2021.
+
+    \item Minsong Ki, Youngjung Uh, \textbf{Junsuk Choe}, Hyeran Byun.
+    ``Contrastive Attention Maps for Self-supervised Co-localization,''
+    in the Proceedings of the International Conference on Computer Vision \text{(ICCV)}, 2021.
+
+    \item Jeesoo Kim, \textbf{Junsuk Choe}, Sangdoo Yun, Nojun Kwak.
+    ``Normalization Matters in Weakly Supervised Object Localization,''
+    in the Proceedings of the International Conference on Computer Vision \text{(ICCV)}, 2021.
+
+    \item Sangdoo Yun, Seong Joon Oh, Byeongho Heo, Dongyoon Han, \textbf{Junsuk Choe}, Sanghyuk Chun.
+    ``Re-labeling ImageNet: from Single to Multi-Labels, from Global to Localized Labels,''
+    in the Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition \text{(CVPR)}, 2021.
+
+    \item \textbf{Junsuk Choe*}, Seong Joon Oh*, Seungho Lee, Sanghyuk Chun, Zeynep Akata, Hyunjung Shim.
+    ``Evaluating Weakly Supervised Object Localization Methods Right,''
+    in the Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition \text{(CVPR)}, 2020.
+
+    \item Sangdoo Yun, Dongyoon Han, Seong Joon Oh, Sanghyuk Chun, \textbf{Junsuk Choe}, Youngjoon Yoo.
+    ``CutMix: Regularization Strategy to Train Strong Classifiers with Localizable Features,''
+    in the Proceedings of the International Conference on Computer Vision \text{(ICCV)}, 2019.
+    \textbf{(Oral presentation)}
+
+    \item \textbf{Junsuk Choe}, Hyunjung Shim.
+    ``Attention-based Dropout Layer for Weakly Supervised Object Localization,''
+    in the Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition \text{(CVPR)}, 2019.
+    \textbf{(Oral presentation)}
+
+\end{enumerate}
+
+%-----------JOURNAL ARTICLES-----------
+\section{Journal Articles}
+\small{Bold text: Lab members, *: Co-first authors, \textdagger: Co-corresponding authors.}
+
+\begin{enumerate}[itemsep=5.5pt]
+
+    \item \textbf{Dongjun Hwang}, Seong Joon Oh, \textbf{Junsuk Choe}.
+    ``Small Object Matters in Weakly Supervised Object Localization,''
+    \textit{Neurocomputing},
+    Oct. 2025.
+
+    \item \textbf{Doyeol Baek}, \textbf{Junsuk Choe}.
+    ``VHOIP: Video-based Human-Object Interaction Recognition with CLIP Prior Knowledge,''
+    \textit{Pattern Recognition Letters},
+    Apr. 2025.
+
+    \item \textbf{Minyoung Lee}, Kyungwoo Song, \textbf{Junsuk Choe}.
+    ``Fog-Free Training for Foggy Scene Understanding,''
+    \textit{Pattern Recognition Letters},
+    vol. 189, pp. 129--135, Mar. 2025.
+
+    \item \textbf{Dongjun Hwang}, \textbf{Hyoseo Kim}, \textbf{Doyeol Baek}, Hyunbin Kim, Inhye Kye, \textbf{Junsuk Choe}.
+    ``Curriculum Learning with Class-label Composition for Weakly Supervised Semantic Segmentation,''
+    \textit{Pattern Recognition Letters},
+    vol. 188, pp. 171--177, Feb. 2025.
+
+    \item \textbf{Junyong Kang}, Byeongho Heo, \textbf{Junsuk Choe}.
+    ``Improving ViT Interpretability with Patch-level Mask Prediction,''
+    \textit{Pattern Recognition Letters},
+    vol. 187, pp. 73--79, Jan. 2025.
+
+    \item Sanghuk Lee*, Cheolhyun Mun*, Youngjung Uh, \textbf{Junsuk Choe}, Hyeran Byun.
+    ``Discovering an Inference Recipe for Weakly-Supervised Object Localization,''
+    \textit{Pattern Recognition},
+    vol. 156, pp. 110838, Dec. 2024.
+
+    \item \textbf{Hyoseo Kim}, \textbf{Junsuk Choe}.
+    ``Weakly-supervised Incremental Learning for Semantic Segmentation with Class Hierarchy,''
+    \textit{Pattern Recognition Letters},
+    vol. 182, pp. 31--38, June 2024.
+
+    \item \textbf{Dongjun Hwang}, Jung-Woo Ha, Hyunjung Shim, \textbf{Junsuk Choe}.
+    ``Entropy Regularization for Weakly Supervised Object Localization,''
+    \textit{Pattern Recognition Letters},
+    vol. 169, pp. 1--7, May 2023.
+
+    \item \textbf{Junsuk Choe*}, Seong Joon Oh*, Sanghyuk Chun, Seungho Lee, Zeynep Akata, Hyunjung Shim.
+    ``Evaluation for Weakly Supervised Object Localization: Protocol, Metrics, and Datasets,''
+    \textit{IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)},
+    vol. 45, no. 2, pp. 1732--1748, Feb. 2023.
+
+    \item \textbf{Junsuk Choe*}, Seungho Lee*, Hyunjung Shim.
+    ``Attention-based Dropout Layer for Weakly Supervised Single Object Localization and Semantic Segmentation,''
+    \textit{IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)},
+    vol. 43, no. 12, pp. 4256--4271, Dec. 2021.
+
+    \item \textbf{Junsuk Choe}, Dongyoon Han, Sangdoo Yun, Jung-Woo Ha, Seong Joon Oh, Hyunjung Shim.
+    ``Region-based Dropout with Attention Prior for Weakly Supervised Object Localization,''
+    \textit{Pattern Recognition},
+    vol. 116, pp. 107949, Aug. 2021.
+
+    \item \textbf{Junsuk Choe}, Hyunjung Shim.
+    ``Robust Approach to Inverse Lighting using RGB-D Images,''
+    \textit{Information Sciences},
+    vol. 438, pp. 73--94, Apr. 2018.
+
+\end{enumerate}
+
+
+%-----------WORKSHOP PAPERS-----------
+\section{Workshop Papers}
+\small{Bold text: Lab members, *: Co-first authors, \textdagger: Co-corresponding authors.}
+
+\begin{enumerate}[itemsep=5.5pt]
+
+    \item Hyejin Lee, \textbf{Junsuk Choe}.
+    ``EvoVLM: Multimodal Evolutionary Feedback for Visual Symbolic Regression,''
+    ICML 2026 Workshop on AI for Science.
+
+    \item \textbf{Elena Kuular}, \textbf{Junsuk Choe}.
+    ``Behavioral Proxy Conditioning for Financial Stress Scenario Generation with a Pretrained Diffusion Model,''
+    ICML 2026 Workshop on Foundation Models for Structured Data.
+
+    \item \textbf{Dongjun Hwang}, \textbf{Yejin Kim}, \textbf{Beomyun Kwon}, \textbf{Junsuk Choe}.
+    ``Alignment-aware Data Selection for Unlearning in Contrastive Vision--Language Models,''
+    ICML 2026 Workshop on the Impact of Memorization on Trustworthy Foundation Models.
+
+    \item Inha Kang, Seonho Lee, Jiho Choi, \textbf{Junsuk Choe}, Hyunjung Shim.
+    ``Grounding the `Not': Symbolic Representation of Negation for Logical Reasoning in VLMs,''
+    ICLR 2026 Workshop on Logical Reasoning of Large Language Models.
+
+    \item Jeongsoo Kim, Jongho Nang, \textbf{Junsuk Choe}.
+    ``LMLT: Low-to-high Multi-Level Vision Transformer for Lightweight Image Super-Resolution,''
+    ICCV 2025 Workshop on Advances in Image Manipulation.
+
+    \item Sanghyuk Chun, Seong Joon Oh, Sangdoo Yun, Dongyoon Han, \textbf{Junsuk Choe}, Youngjoon Yoo.
+    ``An Empirical Evaluation on Robustness and Uncertainty of Regularization Methods,''
+    ICML 2019 Workshop on Uncertainty \& Robustness in Deep Learning.
+
+    \item \textbf{Junsuk Choe}*, Song Park*, Kyungmin Kim*, Joo Hyun Park*, Dongseob Kim*, Hyunjung Shim.
+    ``Face Generation for Low-Shot Learning Using Generative Adversarial Networks,''
+    ICCV 2017 Workshop on MS-Celeb-1M Challenge. \textbf{(Oral presentation)}
+
+\end{enumerate}
+
+%-----------LAB MEMBERS-----------
+\section{Lab Members}
+
+\begin{enumerate}
+
+\item \textbf{Dongjun Hwang} (PhD: 24.03-Present, MS: 22.03-24.02, Intern: 21.09-22.02)\\
+BS in Computer Science and Engineering, Sogang University\\
+Research focus: Vision--Language--Action Models for Continual and Open-World Learning
+
+\item \textbf{Minyoung Lee} (PhD: 25.03-Present, MS: 23.03-25.02, Intern: 22.03-23.02)\\
+BS in Computer Science and Engineering, Sogang University\\
+Research focus: Leveraging Motion Priors for Vision--Language--Action Models
+
+\item \textbf{Yeji Park} (Integrated MS-PhD: 23.03-Present, Intern: 22.10-23.02)\\
+BE in Economics, BS in Mathematics, Sogang University\\
+Research focus: Key--Value Cache Compression for Multi-Instance MLLM Inference
+
+\item \textbf{Jimin Hong} (MS: 26.03-Present, Intern: 25.03-26.02)\\
+BS in Computer Science and Engineering, Sogang University\\
+Research focus: Key--Value Cache Compression for Efficient MLLM Inference
+
+\item \textbf{Jihong Park} (Intern: 26.01-Present)\\
+BS in Mechanical Engineering, Sogang University (Expected: 27.02)\\
+Research focus: AI Agents for Travel Planning
+
+\item \textbf{Seungjun Ha} (Intern: 26.02-Present)\\
+BS in Computer Science and Engineering, Sogang University (Expected: 26.08)\\
+Research focus: Egocentric Vision
+
+\end{enumerate}
+
+%-----------ALUMNI-----------
+\section{Alumni}
+
+\begin{enumerate}
+
+\item \textbf{Yejin Kim} (MS: 24.03-26.02, Intern: 23.02-24.02)\\
+Next position: Research Intern, KAIST AI
+
+\item \textbf{Hyo Seo Kim} (MS: 22.09-25.08)\\
+Next position: PhD Student, Illinois Institute of Technology
+
+\item \textbf{Doyeol Baek} (MS: 22.09-24.08, Intern: 22.01-22.08)\\
+Next position: Software Engineer, Samsung Electronics
+
+\item \textbf{Junyong Kang} (Intern: 21.12-23.03)\\
+Next position: MS/PhD Student, KAIST AI
+
+\item \textbf{Elena Kuular} (MS: 25.10-26.07, Intern: 25.04-25.09)\\
+Next position: TBD
+
+\end{enumerate}
+
+%-----------REFERENCES-----------
+\section{References}
+
+\textbf{Hyunjung Shim}, Ph.D.\\
+Ph.D. Advisor\\
+Associate Professor, Kim Jaechul Graduate School of Artificial Intelligence, KAIST\\
+Email: \href{mailto:kateshim@kaist.ac.kr}{kateshim@kaist.ac.kr} \\
+Homepage: \href{https://kaist-cvml.github.io/}{https://kaist-cvml.github.io/}
+
+\vspace{0.4cm}
+
+\textbf{Seong Joon Oh}, Ph.D.\\
+Former Colleague at NAVER AI Lab.\\
+Associate Professor, Kim Jaechul Graduate School of Artificial Intelligence, KAIST\\
+Email: \href{mailto:coallaoh@gmail.com}{coallaoh@gmail.com} \\
+Homepage: \href{https://seongjoonoh.com/}{https://seongjoonoh.com/}
+
+\end{document}
