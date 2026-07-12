@@ -119,6 +119,16 @@ main,
   padding: 54px 0 52px;
 }
 
+.hero-aside {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.profile-main {
+  grid-column: 1;
+  grid-row: 1;
+}
+
 .role,
 .section-kicker {
   margin: 0 0 5px;
@@ -723,24 +733,14 @@ h3 {
   }
 
   .hero {
-    position: relative;
     display: block;
     padding: 32px 0;
   }
 
-  .hero .role,
-  .hero h1,
-  .hero .tagline,
-  .hero .affiliation,
-  .hero .contact {
-    max-width: calc(100% - 158px);
-  }
-
   .hero-aside {
-    position: absolute;
-    top: 32px;
-    right: 0;
+    float: right;
     width: 132px;
+    margin: 0 0 16px 20px;
   }
 
   h1 {
@@ -766,20 +766,9 @@ h3 {
 }
 
 @media (max-width: 500px) {
-  .hero {
-    display: block;
-  }
-
-  .hero .role,
-  .hero h1,
-  .hero .tagline,
-  .hero .affiliation,
-  .hero .contact {
-    max-width: calc(100% - 132px);
-  }
-
   .hero-aside {
     width: 110px;
+    margin-left: 16px;
   }
 
   .research-grid,
