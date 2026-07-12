@@ -761,7 +761,7 @@ h3 {
   }
 
   .section-heading {
-    top: 102px;
+    position: static;
   }
 }
 
