@@ -759,6 +759,10 @@ h3 {
     scroll-margin-top: 102px;
     padding: 34px 0;
   }
+
+  .section-heading {
+    top: 102px;
+  }
 }
 
 @media (max-width: 500px) {

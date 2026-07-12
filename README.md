@@ -17,4 +17,4 @@ Open `index.html` in a browser.
 
 - Edit `index.html` for content changes.
 - Edit `styles.css` for visual changes.
-- Replace `assets/profile.jpg` to change the profile photo.
+- Replace `assets/DF97E511-BB98-41DF-A3A8-4547CD93DAF7_1_105_c.jpeg` to change the profile photo.
