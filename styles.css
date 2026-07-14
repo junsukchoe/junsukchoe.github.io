@@ -421,6 +421,35 @@ h3 {
   margin: 0;
 }
 
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.equipment-grid article {
+  padding: 18px 20px;
+  border-top: 3px solid var(--accent);
+  background: var(--surface);
+}
+
+.equipment-grid h3 {
+  margin: 0 0 10px;
+  font-family: var(--serif);
+  font-size: 1.12rem;
+}
+
+.equipment-grid ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  list-style: none;
+}
+
 .people-stack {
   display: grid;
   gap: 34px;
@@ -514,6 +543,10 @@ h3 {
   gap: 20px;
   padding: 13px 0;
   border-bottom: 1px solid var(--line);
+}
+
+.activity-row:last-child {
+  border-bottom: none;
 }
 
 .activity-row h3 {
@@ -772,6 +805,7 @@ h3 {
   }
 
   .research-grid,
+  .equipment-grid,
   .timeline li,
   .pub,
   .activity-row {
