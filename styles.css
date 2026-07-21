@@ -233,7 +233,7 @@ h3 {
 
 .hero-status {
   display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
+  grid-template-columns: 260px minmax(0, 1fr);
   gap: 24px;
   width: min(100%, 810px);
   padding: 16px 18px;
