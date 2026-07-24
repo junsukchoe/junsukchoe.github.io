@@ -517,6 +517,10 @@ h3 {
   content: " · ";
 }
 
+.person-activity {
+  font-style: italic;
+}
+
 .person-badges {
   display: flex;
   flex-wrap: wrap;
