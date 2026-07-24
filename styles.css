@@ -348,6 +348,10 @@ h3 {
   border-left: 3px solid var(--accent);
 }
 
+#people .section-heading {
+  position: static;
+}
+
 .section-note {
   margin: 10px 0 0;
   line-height: 1.5;
@@ -430,7 +434,7 @@ h3 {
 
 .group-heading {
   position: sticky;
-  top: 144px;
+  top: 72px;
   z-index: 4;
   display: flex;
   align-items: baseline;
