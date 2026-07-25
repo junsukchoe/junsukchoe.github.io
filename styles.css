@@ -279,6 +279,12 @@ h3 {
 }
 
 .profile-links a + a::before {
+  /* The separator belongs to the link that follows it, so by default the
+     link's hover underline runs through it and it sits inside the click
+     target. inline-block makes it an atomic inline, which text-decoration
+     does not propagate into; pointer-events keeps it unclickable. */
+  display: inline-block;
+  pointer-events: none;
   margin: 0 10px;
   color: var(--sep);
   content: "/";
