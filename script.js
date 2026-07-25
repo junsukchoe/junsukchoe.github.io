@@ -23,6 +23,20 @@
     render();
   }
 
+  // The counts and the year are also written into the HTML so they survive with
+  // JS off; these keep them from drifting as the roster and the calendar move on.
+  Array.prototype.forEach.call(
+    document.querySelectorAll(".people-group"),
+    function (group) {
+      var tally = group.querySelector(".group-heading span");
+      var list = group.querySelector(".roster-list");
+      if (tally && list) tally.textContent = String(list.children.length);
+    }
+  );
+
+  var footerYear = document.getElementById("footer-year");
+  if (footerYear) footerYear.textContent = String(new Date().getFullYear());
+
   var newsList = document.getElementById("news-timeline");
   var newsToggle = document.getElementById("news-toggle");
   if (newsList && newsToggle) {

@@ -260,7 +260,7 @@ h3 {
 .contact,
 .section-note,
 .venue,
-.person-meta {
+.roster-meta {
   color: var(--muted);
   font-size: 0.83rem;
 }
@@ -436,7 +436,7 @@ h3 {
 }
 
 .timeline,
-.people-list,
+.roster-list,
 .publication-list {
   margin: 0;
   padding: 0;
@@ -528,24 +528,24 @@ h3 {
   font-size: 0.76rem;
 }
 
-.people-list {
+.roster-list {
   border-top: 1px solid var(--line);
   list-style: none;
 }
 
-#equipment .people-list {
+#equipment .roster-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0 48px;
 }
 
-#equipment .person-meta {
+#equipment .roster-meta {
   color: var(--text);
   font-size: 0.85rem;
   line-height: 1.5;
 }
 
-.people-list li {
+.roster-list li {
   break-inside: avoid;
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
@@ -555,13 +555,13 @@ h3 {
   font-weight: 700;
 }
 
-.people-list li > a {
+.roster-list li > a {
   color: var(--ink);
   text-decoration: underline;
   text-decoration-color: var(--rule-soft);
 }
 
-.person-meta {
+.roster-meta {
   display: grid;
   gap: 2px;
   margin-top: 7px;
@@ -571,7 +571,7 @@ h3 {
   line-height: 1.45;
 }
 
-.person-meta span {
+.roster-meta span {
   display: block;
 }
 
@@ -817,7 +817,7 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  #equipment .people-list {
+  #equipment .roster-list {
     grid-template-columns: 1fr;
   }
 
