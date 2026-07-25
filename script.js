@@ -26,7 +26,7 @@
   var newsList = document.getElementById("news-timeline");
   var newsToggle = document.getElementById("news-toggle");
   if (newsList && newsToggle) {
-    setupCollapsible(newsList, newsToggle, 6);
+    setupCollapsible(newsList, newsToggle, 8);
   }
 
   var pubList = document.getElementById("publication-list");
@@ -83,7 +83,7 @@
         Array.prototype.slice.call(pubFilters.children).forEach(function (btn) {
           var isActive = btn === button;
           btn.classList.toggle("is-active", isActive);
-          btn.setAttribute("aria-selected", String(isActive));
+          btn.setAttribute("aria-pressed", String(isActive));
         });
         render();
       });
