@@ -571,14 +571,46 @@ h3 {
   list-style: none;
 }
 
-/* Alumni are kept to name, period, degrees, and where they went next; the
-   scholarships and visits stay in the markup but are not shown. */
+/* Current members are split by program under one "Current Members" heading,
+   so programs sit a level below it and alongside nothing else. */
+.roster-subhead {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 28px 0 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line-dark);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.group-heading + .roster-subhead {
+  margin-top: 16px;
+}
+
+.roster-subhead span {
+  color: var(--muted);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.roster-subhead + .roster-list {
+  border-top: 0;
+}
+
+/* Every card keeps the same fixed lines (period, degrees, research or next
+   position) so rows stay even; scholarships and visits stay in the markup
+   (and in the CV) but are not shown. */
 #people .alumni-group .roster-list {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.alumni-group .person-badges,
-.alumni-group .person-activity {
+#people .person-badges,
+#people .person-activity {
   display: none;
 }
 

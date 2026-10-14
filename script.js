@@ -29,8 +29,8 @@
     document.querySelectorAll(".people-group"),
     function (group) {
       var tally = group.querySelector(".group-heading span");
-      var list = group.querySelector(".roster-list");
-      if (tally && list) tally.textContent = String(list.children.length);
+      var people = group.querySelectorAll(".roster-list > li");
+      if (tally) tally.textContent = String(people.length);
     }
   );
 
@@ -49,6 +49,15 @@
     window.addEventListener("resize", updateNavEdges);
     updateNavEdges();
   }
+
+  Array.prototype.forEach.call(
+    document.querySelectorAll(".roster-subhead"),
+    function (subhead) {
+      var tally = subhead.querySelector("span");
+      var list = subhead.nextElementSibling;
+      if (tally && list) tally.textContent = String(list.children.length);
+    }
+  );
 
   var footerYear = document.getElementById("footer-year");
   if (footerYear) footerYear.textContent = String(new Date().getFullYear());
