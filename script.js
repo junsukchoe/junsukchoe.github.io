@@ -34,6 +34,22 @@
     }
   );
 
+  // On narrow screens the nav scrolls sideways with its scrollbar hidden;
+  // mark which edges still hide links so the CSS can fade them.
+  var nav = document.querySelector(".nav");
+  if (nav) {
+    var updateNavEdges = function () {
+      var hiddenLeft = nav.scrollLeft > 1;
+      var hiddenRight = nav.scrollLeft + nav.clientWidth < nav.scrollWidth - 1;
+      var more = hiddenLeft && hiddenRight ? "both" : hiddenLeft ? "left" : hiddenRight ? "right" : "";
+      if (more) nav.dataset.more = more;
+      else delete nav.dataset.more;
+    };
+    nav.addEventListener("scroll", updateNavEdges, { passive: true });
+    window.addEventListener("resize", updateNavEdges);
+    updateNavEdges();
+  }
+
   var footerYear = document.getElementById("footer-year");
   if (footerYear) footerYear.textContent = String(new Date().getFullYear());
 

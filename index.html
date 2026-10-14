@@ -17,9 +17,12 @@
     <meta property="og:image:height" content="1024">
     <meta property="og:image:alt" content="Junsuk Choe">
     <meta name="twitter:card" content="summary">
-    <link rel="icon" type="image/png" href="assets/sogang-favicon-large.png">
-    <link rel="stylesheet" href="styles.css?v=academic47">
-    <script src="script.js?v=3" defer></script>
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+    <link rel="apple-touch-icon" href="assets/sogang-favicon-large.png">
+    <link rel="preload" href="assets/fonts/SiteSerif-Semibold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/SiteSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="styles.css?v=academic48">
+    <script src="script.js?v=4" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -80,7 +83,11 @@
       <section class="hero">
         <aside class="hero-aside" aria-label="Profile photo and shortcuts">
           <figure class="profile-photo">
-            <img src="assets/DF97E511-BB98-41DF-A3A8-4547CD93DAF7_1_105_c.jpeg" alt="Junsuk Choe" width="768" height="1024" decoding="async" fetchpriority="high">
+            <picture>
+              <!-- sizes run ~1.3x the box width because .profile-photo img is scaled up 1.3x -->
+              <source type="image/webp" srcset="assets/profile-480.webp 480w, assets/profile-768.webp 768w" sizes="(max-width: 680px) 172px, (max-width: 980px) 312px, 416px">
+              <img src="assets/DF97E511-BB98-41DF-A3A8-4547CD93DAF7_1_105_c.jpeg" alt="Junsuk Choe" width="768" height="1024" decoding="async" fetchpriority="high">
+            </picture>
           </figure>
         </aside>
         <div class="profile-main">

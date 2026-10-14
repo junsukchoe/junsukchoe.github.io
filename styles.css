@@ -1,3 +1,25 @@
+/* Source Serif 4 (SIL OFL), subset to Latin and renamed "Site Serif" as the
+   OFL requires for modified copies of a Reserved Font Name; see
+   assets/fonts/OFL.txt. Self-hosted so every OS gets the same face as the CV
+   instead of falling back from Charter (Apple-only) to Georgia/Times. */
+@font-face {
+  font-family: "Site Serif";
+  src: url("assets/fonts/SiteSerif-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Semibold stands in for bold: the site asks for 700, but Source Serif's
+   true Bold reads heavier than the Charter bold the design was drawn with. */
+@font-face {
+  font-family: "Site Serif";
+  src: url("assets/fonts/SiteSerif-Semibold.woff2") format("woff2");
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light dark;
   --bg: #ffffff;
@@ -23,7 +45,7 @@
   --selection: #eadadd;
   --header-h: 71px;
   --max: 1180px;
-  --serif: Charter, "Bitstream Charter", Georgia, "Times New Roman", serif;
+  --serif: "Site Serif", Charter, "Bitstream Charter", Georgia, "Times New Roman", serif;
   --sans: Arial, Helvetica, ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -386,6 +408,10 @@ h3 {
   border: 1px solid var(--line-dark);
   border-top: 3px solid var(--accent);
   background: var(--surface);
+}
+
+.profile-photo picture {
+  display: block;
 }
 
 .profile-photo img {
@@ -872,6 +898,23 @@ h3 {
     padding-bottom: 3px;
     white-space: nowrap;
     scrollbar-width: none;
+  }
+
+  /* The scrollbar is hidden, so fade the edge that still has links past it;
+     script.js sets these as the nav scrolls. */
+  .nav[data-more="right"] {
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 36px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 36px), transparent);
+  }
+
+  .nav[data-more="left"] {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 36px);
+    mask-image: linear-gradient(to right, transparent, #000 36px);
+  }
+
+  .nav[data-more="both"] {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 36px, #000 calc(100% - 36px), transparent);
+    mask-image: linear-gradient(to right, transparent, #000 36px, #000 calc(100% - 36px), transparent);
   }
 
   .profile-links {
