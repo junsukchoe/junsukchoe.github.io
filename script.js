@@ -72,61 +72,69 @@
   var pubToggle = document.getElementById("pub-toggle");
   var pubFilters = document.getElementById("pub-filters");
 
-  if (pubList && pubToggle) {
+  if (pubList && pubToggle && pubFilters) {
+    // Opens on "Selected": the eight most recent conference and journal papers
+    // where the PI is a corresponding author, so the pick follows a rule rather
+    // than a judgment. The list is newest first, so DOM order is recency. A
+    // "^" marks co-corresponding authors; with no "^" on the paper, the last
+    // author is taken as the sole corresponding author.
+    var SELECTED_COUNT = 8;
     var pubItems = Array.prototype.slice.call(pubList.children);
-    var COLLAPSE_COUNT = 12;
-    var expanded = false;
-    var activeType = "all";
+    var filterButtons = Array.prototype.slice.call(pubFilters.querySelectorAll("[data-filter]"));
+    var activeType = "selected";
 
+    function piIsCorresponding(item) {
+      var pi = item.querySelector(".pi");
+      if (!pi) return false;
+      var piName = pi.textContent.trim();
+      if (/\^$/.test(piName)) return true;
+      var authors = pi.parentNode.textContent.split(",").map(function (name) {
+        return name.trim();
+      });
+      var anyCaret = authors.some(function (name) { return /\^$/.test(name); });
+      return !anyCaret && authors[authors.length - 1] === piName;
+    }
+
+    var selectedSoFar = 0;
     pubItems.forEach(function (item) {
       var code = item.querySelector("span").textContent.match(/^[A-Za-z]+/);
       item.dataset.type = code ? code[0] : "";
+      var eligible = (item.dataset.type === "C" || item.dataset.type === "J") && piIsCorresponding(item);
+      if (eligible && selectedSoFar < SELECTED_COUNT) {
+        item.dataset.selected = "";
+        selectedSoFar++;
+      }
     });
 
     function render() {
-      var shown = 0;
-      var matching = 0;
       pubItems.forEach(function (item) {
-        var matches = activeType === "all" || item.dataset.type === activeType;
-        if (!matches) {
-          item.hidden = true;
-          return;
-        }
-        matching++;
-        var visible = expanded || activeType !== "all" || shown < COLLAPSE_COUNT;
-        item.hidden = !visible;
-        if (visible) shown++;
+        var matches =
+          activeType === "selected" ? item.hasAttribute("data-selected") :
+          activeType === "all" || item.dataset.type === activeType;
+        item.hidden = !matches;
       });
 
-      var showToggle = activeType === "all" && matching > COLLAPSE_COUNT;
-      pubToggle.hidden = !showToggle;
-      if (showToggle) {
-        pubToggle.textContent = expanded
-          ? "Show fewer"
-          : "Show all publications (" + (matching - COLLAPSE_COUNT) + " more)";
-        pubToggle.setAttribute("aria-expanded", String(expanded));
-      }
+      pubToggle.hidden = activeType !== "selected";
+      pubToggle.textContent = "Show all publications (" + pubItems.length + ")";
+
+      filterButtons.forEach(function (btn) {
+        var isActive = btn.dataset.filter === activeType;
+        btn.classList.toggle("is-active", isActive);
+        btn.setAttribute("aria-pressed", String(isActive));
+      });
     }
 
-    pubToggle.addEventListener("click", function () {
-      expanded = !expanded;
+    pubFilters.addEventListener("click", function (event) {
+      var button = event.target.closest("[data-filter]");
+      if (!button) return;
+      activeType = button.dataset.filter;
       render();
     });
 
-    if (pubFilters) {
-      pubFilters.addEventListener("click", function (event) {
-        var button = event.target.closest("[data-filter]");
-        if (!button) return;
-        activeType = button.dataset.filter;
-        expanded = false;
-        Array.prototype.slice.call(pubFilters.children).forEach(function (btn) {
-          var isActive = btn === button;
-          btn.classList.toggle("is-active", isActive);
-          btn.setAttribute("aria-pressed", String(isActive));
-        });
-        render();
-      });
-    }
+    pubToggle.addEventListener("click", function () {
+      activeType = "all";
+      render();
+    });
 
     render();
   }
