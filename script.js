@@ -68,30 +68,11 @@
     setupCollapsible(newsList, newsToggle, 8);
   }
 
-  // A safety net only: the two-column block holds a dozen hosts before any of
-  // the older ones need to fold away.
+  // A safety net only: a dozen hosts show before any of the older ones fold away.
   var visitList = document.getElementById("visit-list");
   var visitToggle = document.getElementById("visit-toggle");
   if (visitList && visitToggle) {
     setupCollapsible(visitList, visitToggle, 12);
-  }
-
-  // Each host keeps its people on one line so the two-column rows stay the
-  // same height; a host whose people would wrap gets the full width instead.
-  if (visitList) {
-    var fitVisits = function () {
-      var hosts = Array.prototype.slice.call(visitList.children);
-      hosts.forEach(function (host) { host.classList.remove("visit-wide"); });
-      if (getComputedStyle(visitList).gridTemplateColumns.split(" ").length < 2) return;
-      hosts.forEach(function (host) {
-        var people = host.querySelectorAll(".visit-people > li");
-        var last = people[people.length - 1];
-        if (last && last.offsetTop > people[0].offsetTop) host.classList.add("visit-wide");
-      });
-    };
-    fitVisits();
-    window.addEventListener("resize", fitVisits);
-    if (document.fonts) document.fonts.ready.then(fitVisits);
   }
 
   var pubList = document.getElementById("publication-list");

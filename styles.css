@@ -614,32 +614,27 @@ h3 {
 
 /* Visits and internships, grouped by host institution: the per-person
    entries are hidden on the cards to keep them even, and gathered here. */
-/* Two institutions per row, so the block grows by half a row per new host;
-   every row takes the tallest one's height so the rules stay evenly spaced. */
+/* One host per line, like the Academic Activities rows: a single visit is just
+   a short line, and hosts several members visited run longer and stand out. */
 .visit-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-auto-rows: 1fr;
-  gap: 0 40px;
   margin: 0;
   padding: 0;
+  border-top: 2px solid var(--ink);
   list-style: none;
 }
 
+/* wide enough for the longest host note to stay on one line */
 .visit-list > li {
   display: grid;
-  align-content: start;
-  gap: 8px;
-  padding: 14px 0;
+  grid-template-columns: 400px minmax(0, 1fr);
+  gap: 24px;
+  padding: 12px 0;
   border-bottom: 1px solid var(--line);
 }
 
-/* host sits beside the institution, dropping to its own line only if it must */
 .visit-place {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 2px 10px;
+  display: grid;
+  gap: 1px;
 }
 
 .visit-place strong {
@@ -662,27 +657,19 @@ h3 {
 .visit-people {
   display: flex;
   flex-wrap: wrap;
-  gap: 2px 16px;
+  align-content: start;
+  gap: 4px 20px;
   margin: 0;
-  padding: 2px 0 0;
+  padding: 1px 0 0;
   color: var(--ink);
   list-style: none;
   font-size: 0.9rem;
 }
 
-.visit-people li {
-  display: grid;
-  gap: 1px;
-}
-
 .visit-people span {
+  margin-left: 4px;
   color: var(--muted);
-  font-size: 0.74rem;
-}
-
-/* script.js gives a host both columns when its people no longer fit in one */
-.visit-list > li.visit-wide {
-  grid-column: 1 / -1;
+  font-size: 0.78rem;
 }
 
 #equipment .roster-list {
@@ -976,6 +963,10 @@ h3 {
   #people .roster-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .visit-list > li {
+    grid-template-columns: 300px minmax(0, 1fr);
+  }
 }
 
 @media (max-width: 980px) {
@@ -1014,10 +1005,9 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  /* one host per row: nothing to line up, so each takes its own height */
-  .visit-list {
+  .visit-list > li {
     grid-template-columns: 1fr;
-    grid-auto-rows: auto;
+    gap: 6px;
   }
 
   .research-grid {
