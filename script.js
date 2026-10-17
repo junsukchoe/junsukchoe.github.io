@@ -80,7 +80,7 @@
   var pubFilters = document.getElementById("pub-filters");
 
   if (pubList && pubToggle && pubFilters) {
-    // Opens on "Selected": conference and journal papers from SELECTED_SINCE on
+    // Opens on "Selected": conference papers from SELECTED_SINCE on
     // that the lab led (a lab member first, the PI a corresponding author), so
     // the pick follows a rule rather than a judgment. The list is newest first, so DOM order is recency. A
     // "^" marks co-corresponding authors; with no "^" on the paper, the last
@@ -119,7 +119,7 @@
     pubItems.forEach(function (item) {
       var code = item.querySelector("span").textContent.match(/^[A-Za-z]+/);
       item.dataset.type = code ? code[0] : "";
-      var eligible = (item.dataset.type === "C" || item.dataset.type === "J") &&
+      var eligible = item.dataset.type === "C" &&
         paperYear(item) >= SELECTED_SINCE &&
         piIsCorresponding(item) && labMemberFirst(item);
       if (eligible) item.dataset.selected = "";
