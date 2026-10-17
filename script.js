@@ -80,12 +80,12 @@
   var pubFilters = document.getElementById("pub-filters");
 
   if (pubList && pubToggle && pubFilters) {
-    // Opens on "Selected": the eight most recent conference and journal papers
-    // led by the lab (a lab member first, the PI a corresponding author), so the
-    // pick follows a rule rather than a judgment. The list is newest first, so DOM order is recency. A
+    // Opens on "Selected": conference and journal papers from SELECTED_SINCE on
+    // that the lab led (a lab member first, the PI a corresponding author), so
+    // the pick follows a rule rather than a judgment. The list is newest first, so DOM order is recency. A
     // "^" marks co-corresponding authors; with no "^" on the paper, the last
     // author is taken as the sole corresponding author.
-    var SELECTED_COUNT = 8;
+    var SELECTED_SINCE = 2025;
     var pubItems = Array.prototype.slice.call(pubList.children);
     var filterButtons = Array.prototype.slice.call(pubFilters.querySelectorAll("[data-filter]"));
     var activeType = "selected";
@@ -109,16 +109,20 @@
       return !!(first && first.nodeType === 1 && first.classList.contains("lab"));
     }
 
-    var selectedSoFar = 0;
+    // the year is the last four-digit year in the venue line
+    function paperYear(item) {
+      var venue = item.querySelector(".venue");
+      var years = venue ? venue.textContent.match(/(19|20)\d\d/g) : null;
+      return years ? Number(years[years.length - 1]) : 0;
+    }
+
     pubItems.forEach(function (item) {
       var code = item.querySelector("span").textContent.match(/^[A-Za-z]+/);
       item.dataset.type = code ? code[0] : "";
       var eligible = (item.dataset.type === "C" || item.dataset.type === "J") &&
+        paperYear(item) >= SELECTED_SINCE &&
         piIsCorresponding(item) && labMemberFirst(item);
-      if (eligible && selectedSoFar < SELECTED_COUNT) {
-        item.dataset.selected = "";
-        selectedSoFar++;
-      }
+      if (eligible) item.dataset.selected = "";
     });
 
     function render() {
