@@ -81,8 +81,8 @@
 
   if (pubList && pubToggle && pubFilters) {
     // Opens on "Selected": the eight most recent conference and journal papers
-    // where the PI is a corresponding author, so the pick follows a rule rather
-    // than a judgment. The list is newest first, so DOM order is recency. A
+    // led by the lab (a lab member first, the PI a corresponding author), so the
+    // pick follows a rule rather than a judgment. The list is newest first, so DOM order is recency. A
     // "^" marks co-corresponding authors; with no "^" on the paper, the last
     // author is taken as the sole corresponding author.
     var SELECTED_COUNT = 8;
@@ -102,11 +102,19 @@
       return !anyCaret && authors[authors.length - 1] === piName;
     }
 
+    // lab members are marked class="lab" in the author line
+    function labMemberFirst(item) {
+      var authors = item.querySelector("h3 + p");
+      var first = authors && authors.firstChild;
+      return !!(first && first.nodeType === 1 && first.classList.contains("lab"));
+    }
+
     var selectedSoFar = 0;
     pubItems.forEach(function (item) {
       var code = item.querySelector("span").textContent.match(/^[A-Za-z]+/);
       item.dataset.type = code ? code[0] : "";
-      var eligible = (item.dataset.type === "C" || item.dataset.type === "J") && piIsCorresponding(item);
+      var eligible = (item.dataset.type === "C" || item.dataset.type === "J") &&
+        piIsCorresponding(item) && labMemberFirst(item);
       if (eligible && selectedSoFar < SELECTED_COUNT) {
         item.dataset.selected = "";
         selectedSoFar++;
