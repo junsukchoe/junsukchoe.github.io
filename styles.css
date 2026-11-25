@@ -508,10 +508,11 @@ h3 {
   text-decoration-color: var(--rule-soft);
 }
 
+/* four directions, two per row */
 .research-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 32px;
 }
 
 .research-grid article {
@@ -726,9 +727,9 @@ h3 {
   display: inline;
 }
 
+/* a plain comma between periods, in the text's own color */
 .period-list span + span::before {
-  color: var(--dot);
-  content: " · ";
+  content: ", ";
 }
 
 .person-activity {

@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" href="assets/sogang-favicon-large.png">
     <link rel="preload" href="assets/fonts/SiteSerif-Semibold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/SiteSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="styles.css?v=academic73">
+    <link rel="stylesheet" href="styles.css?v=academic75">
     <script src="script.js?v=17" defer></script>
     <script type="application/ld+json">
       {
@@ -52,6 +52,7 @@
           "Vision-Language Models",
           "Machine Unlearning",
           "Continual Learning",
+          "Scalable Oversight",
           "Agentic AI",
           "Embodied AI"
         ],
@@ -99,7 +100,7 @@
             <a href="https://computing.sogang.ac.kr/en/education/undergraduate/computer-science" target="_blank" rel="noreferrer">Department of Computer Science and Engineering</a>,
             <a href="https://wwwe.sogang.ac.kr" target="_blank" rel="noreferrer">Sogang University</a>
           </p>
-          <p class="contact">Office: AS-913 · Phone: +82-2-705-8495</p>
+          <p class="contact">Office: AS-913, Phone: +82-2-705-8495</p>
           <div class="profile-links" aria-label="Profile links">
             <a href="mailto:jschoe.cs@gmail.com">Email</a>
             <a href="https://scholar.google.com/citations?user=1H2H7XAAAAAJ&hl=en" target="_blank" rel="noreferrer">Scholar</a>
@@ -118,14 +119,13 @@
           <div class="hero-status" aria-label="Recruiting information">
             <div class="recruiting-summary">
               <p class="recruiting-eyebrow">Prospective Students</p>
-              <p><strong>Recruiting one graduate student, starting March 2027</strong></p>
+              <p><strong>Recruitment for March 2027 is closed</strong></p>
             </div>
             <div class="recruiting-details">
-              <p>We welcome inquiries from students interested in:</p>
+              <p>We are not actively recruiting, but outstanding candidates interested in the following are still welcome to reach out:</p>
               <ul class="recruiting-topics">
-                <li>Agentic AI</li>
-                <li>Robotics</li>
-                <li>Efficient LLM inference</li>
+                <li>Scalable Oversight</li>
+                <li>Embodied AI</li>
               </ul>
               <a href="mailto:jschoe.cs@gmail.com">Get in touch by email <span aria-hidden="true">→</span></a>
             </div>
@@ -170,34 +170,41 @@
         </div>
         <div>
           <p class="section-lead">
-            My research centers on large multimodal foundation models — vision-language, video-language, and
-            increasingly agentic models that plan and act in digital and physical environments — and aims to make
-            them sustainable to manage and reliable to deploy without costly retraining. I pursue this goal along
-            three complementary directions: unlearning and continual learning, faithful and efficient inference,
-            and agentic and embodied AI.
+            My research centers on large multimodal foundation models, from vision-language and video-language
+            models to agents that plan and act in digital and physical environments. The goal is to make these
+            models sustainable to maintain and reliable to deploy without costly retraining. I pursue it along
+            four directions.
           </p>
           <div class="research-grid">
             <article>
               <h3>Unlearning and Continual Learning</h3>
               <p>
-                I develop methods for changing what a large model already knows — removing facts it should forget,
-                absorbing skills it lacks — with a growing focus on structures that keep knowledge localized and
+                I develop methods for changing what a large model already knows, removing facts it should forget
+                and absorbing skills it lacks. A growing focus is on structures that keep knowledge localized and
                 composable rather than entangled.
               </p>
             </article>
             <article>
-              <h3>Faithful and Efficient Inference</h3>
+              <h3>Faithful Outputs and Scalable Oversight</h3>
               <p>
-                I work on keeping multimodal outputs grounded in the intended evidence — addressing hallucination
-                and cross-modal imbalance — while designing inference-time compression that scales with input
-                complexity instead of breaking under it.
+                I study how to keep multimodal outputs grounded in the intended evidence, addressing hallucination
+                and cross-modal imbalance. Building on this, I develop methods for verifying what AI systems
+                produce, so their outputs can be checked reliably even where direct human review does not scale.
+              </p>
+            </article>
+            <article>
+              <h3>Efficient Inference</h3>
+              <p>
+                I design inference-time compression, such as key-value cache compression and quantization, that
+                scales with input complexity instead of breaking under it, keeping large multimodal models practical
+                to serve on long and multi-image inputs.
               </p>
             </article>
             <article>
               <h3>Agentic and Embodied AI</h3>
               <p>
                 As foundation models move from passive perception to autonomous action, I study how they can plan,
-                use tools, and act reliably — as digital agents navigating multi-step tasks or embodied
+                use tools, and act reliably, both as digital agents navigating multi-step tasks and as embodied
                 vision-language-action models in the physical world.
               </p>
             </article>
@@ -278,7 +285,7 @@
             <button type="button" class="pub-filter" data-filter="C" aria-pressed="false">Conference</button>
             <button type="button" class="pub-filter" data-filter="W" aria-pressed="false">Workshop</button>
           </div>
-          <p class="pub-legend">* co-first &middot; ^ co-corresponding</p>
+          <p class="pub-legend">* co-first, ^ co-corresponding</p>
         </div>
         <div class="publication-list" id="publication-list">
           <article class="pub"><span>C21</span><div><h3><a href="https://aclanthology.org/2026.aacl-short.42.pdf" target="_blank" rel="noreferrer">Mitigating Cross-Image Information Leakage in Multi-Image Understanding with Large Vision-Language Models</a></h3><p><span class="lab">Yeji Park</span>, <span class="lab">Minyoung Lee</span>, Sanghyuk Chun, <strong class="pi">Junsuk Choe</strong></p><p class="venue">AACL-IJCNLP 2026.</p><p class="pub-links"><a href="https://github.com/yejipark-m/FOCUS" target="_blank" rel="noreferrer">code</a></p></div></article>
