@@ -166,22 +166,27 @@ Yonsei University, School of Electrical and Electronic Engineering \hfill Seoul,
 %-----------RESEARCH INTERESTS-----------
 \section{Research Interests}
 
-My research centers on large multimodal foundation models---vision--language, video--language, and, increasingly, agentic models that plan and act in digital and physical environments---and aims to make them sustainable to manage and reliable to deploy without costly retraining. I pursue this goal along three complementary directions: unlearning and continual learning, faithful and efficient inference, and agentic and embodied AI.
+My research centers on large multimodal foundation models, from vision-language and video-language models to agents that plan and act in digital and physical environments. The goal is to make these models sustainable to maintain and reliable to deploy without costly retraining. I pursue it along four directions: unlearning and continual learning, faithful outputs and scalable oversight, efficient inference, and agentic and embodied AI.
 
 \vspace{0.25cm}
 
-\textbf{Unlearning and Continual Learning: Acquisition, Retention, and Forgetting.}
-I develop methods for changing what a large model already knows---removing facts it should forget, absorbing skills it lacks. Motivated by the observation that post-hoc removal often suppresses rather than truly erases knowledge, I am increasingly interested in model structures in which knowledge is localized and composable, so that editing becomes a matter of adding or detaching components rather than disentangling intertwined parameters.
+\textbf{Unlearning and Continual Learning.}
+I develop methods for changing what a large model already knows, removing facts it should forget and absorbing skills it lacks. Post-hoc removal often suppresses rather than truly erases knowledge, so I am increasingly interested in model structures in which knowledge is localized and composable. In such structures, editing becomes a matter of adding or detaching components rather than disentangling intertwined parameters.
 
 \vspace{0.25cm}
 
-\textbf{Faithful and Efficient Inference: Grounding and Compression.}
-I work on making multimodal model outputs trustworthy and cheap to serve. On the faithfulness side, I study hallucination and other failures that emerge as inputs grow richer and more composite---spanning multiple images, modalities, or turns---asking how to measure whether an output is grounded in the intended evidence and how to correct it when it is not. On the efficiency side, I study how inference-time compression techniques that work well for simple inputs break down as inputs grow more complex, and how to design compression that scales with input structure rather than against it.
+\textbf{Faithful Outputs and Scalable Oversight.}
+I study hallucination and other failures that emerge as multimodal inputs grow richer and more composite, spanning multiple images, modalities, or turns. I ask how to measure whether an output is grounded in the intended evidence and how to correct it when it is not. Building on this, I develop methods for verifying what AI systems produce, so that their outputs can be checked reliably even where direct human review does not scale.
 
 \vspace{0.25cm}
 
-\textbf{Agentic and Embodied AI: Acting in Digital and Physical Environments.}
-As foundation models move from passive perception to autonomous action, I am beginning to explore how they can plan, use tools, and act reliably---whether as digital agents navigating multi-step tasks or as embodied vision--language--action models operating in the physical world. This direction extends my work on unlearning, continual learning, and faithful inference to settings where models must update their skills over time and ground their decisions in real-world feedback rather than static labels.
+\textbf{Efficient Inference.}
+I study why inference-time compression techniques that work well for simple inputs break down as inputs grow more complex, and how to design compression, such as key-value cache compression and quantization, that scales with input structure rather than against it.
+
+\vspace{0.25cm}
+
+\textbf{Agentic and Embodied AI.}
+As foundation models move from passive perception to autonomous action, I study how they can plan, use tools, and act reliably. In digital environments, this means agents that carry out multi-step tasks. In the physical world, it means general-purpose VLMs used as robot policies, either acting directly or writing code that controls the robot. This direction extends my work on continual learning and faithful outputs to settings where models must update their skills over time and ground their decisions in real-world feedback.
 
 
 %-----------TEACHING-----------
@@ -510,7 +515,7 @@ Research focus: Grounded Multimodal LLMs
 
 \item \textbf{Jimin Hong} (MS: 26.03-Present, Intern: 25.03-26.02)\\
 BS in Computer Science and Engineering, Sogang University\\
-Research focus: Key--Value Cache Compression for Efficient MLLM Inference
+Research focus: Key-Value Cache Compression for Efficient MLLM Inference
 
 \item \textbf{Seungjun Ha} (MS: 26.09-Present, Intern: 26.02-26.08)\\
 BS in Computer Science and Engineering, Sogang University\\
@@ -523,7 +528,7 @@ Research focus: Egocentric Vision
 
 \item \textbf{Jihong Park} (Intern: 26.01-Present)\\
 BS in Mechanical Engineering, Sogang University (Expected: 27.08)\\
-Research focus: Key--Value Cache Quantization
+Research focus: Key-Value Cache Quantization
 
 \item \textbf{Seungjoo Lee} (Intern: 26.08-Present)\\
 BAS in Art \& Technology, Sogang University (Expected: 28.02)\\
