@@ -21,8 +21,8 @@
     <link rel="apple-touch-icon" href="assets/sogang-favicon-large.png">
     <link rel="preload" href="assets/fonts/SiteSerif-Semibold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/SiteSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="styles.css?v=academic75">
-    <script src="script.js?v=17" defer></script>
+    <link rel="stylesheet" href="styles.css?v=academic79">
+    <script src="script.js?v=23" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -264,16 +264,17 @@
           <h2>Visits &amp; Internships</h2>
         </div>
         <div>
+        <p class="visit-summary" id="visit-summary" hidden></p>
         <ul class="visit-list" id="visit-list">
-          <li><div class="visit-place"><strong>Princeton Univ.</strong><span>Hosted by <a href="https://www.cs.princeton.edu/~olgarus/" target="_blank" rel="noreferrer">Prof. Olga Russakovsky</a></span></div><ul class="visit-people"><li>Yeji <span>27.03–07</span></li></ul></li>
-          <li><div class="visit-place"><strong>Johns Hopkins Univ.</strong><span>Hosted by <a href="https://j-min.io/" target="_blank" rel="noreferrer">Prof. Jaemin Cho</a></span></div><ul class="visit-people"><li>Minyoung <span>26.08–11</span></li></ul></li>
-          <li><div class="visit-place"><strong>Univ. of British Columbia</strong><span>Hosted by <a href="https://www.cs.ubc.ca/people/cristina-conati" target="_blank" rel="noreferrer">Prof. Cristina Conati</a></span></div><ul class="visit-people"><li>Jimin <span>26.08–11</span></li></ul></li>
-          <li><div class="visit-place"><strong>Univ. of Tübingen</strong><span>Hosted by <a href="https://seongjoonoh.com/" target="_blank" rel="noreferrer">Prof. Seong Joon Oh</a> (with <a href="https://www.eml-munich.de/" target="_blank" rel="noreferrer">Prof. Zeynep Akata</a> in 2023)</span></div><ul class="visit-people"><li>Dongjun <span>25.05–07</span></li><li>Yeji <span>25.01–02</span></li><li>Yejin <span>25.01–02</span></li><li>Hyo Seo <span>23.07–08</span></li><li>Minyoung <span>25.01–02, 23.07–08</span></li></ul></li>
-          <li><div class="visit-place"><strong>NAVER AI Lab</strong><span>Research internship</span></div><ul class="visit-people"><li>Yeji <span>25.09–26.02</span></li><li>Hyo Seo <span>24.07–10</span></li></ul></li>
-          <li><div class="visit-place"><strong>Michigan State Univ.</strong><span>Hosted by <a href="https://lsjxjtu.github.io/" target="_blank" rel="noreferrer">Prof. Sijia Liu</a></span></div><ul class="visit-people"><li>Hyo Seo <span>24.10–25.04</span></li></ul></li>
-          <li><div class="visit-place"><strong>Carnegie Mellon Univ.</strong><span>IITP AI Intensive Education Program</span></div><ul class="visit-people"><li>Dongjun <span>24.09–25.02</span></li></ul></li>
+          <li data-short="Princeton"><div class="visit-place"><strong>Princeton Univ.</strong><span>Hosted by <a href="https://www.cs.princeton.edu/~olgarus/" target="_blank" rel="noreferrer">Prof. Olga Russakovsky</a></span></div><ul class="visit-people"><li>Yeji <span>27.03–07</span></li></ul></li>
+          <li data-short="Johns Hopkins"><div class="visit-place"><strong>Johns Hopkins Univ.</strong><span>Hosted by <a href="https://j-min.io/" target="_blank" rel="noreferrer">Prof. Jaemin Cho</a></span></div><ul class="visit-people"><li>Minyoung <span>26.08–11</span></li></ul></li>
+          <li data-short="UBC"><div class="visit-place"><strong>Univ. of British Columbia</strong><span>Hosted by <a href="https://www.cs.ubc.ca/people/cristina-conati" target="_blank" rel="noreferrer">Prof. Cristina Conati</a></span></div><ul class="visit-people"><li>Jimin <span>26.08–11</span></li></ul></li>
+          <li data-short="Tübingen"><div class="visit-place"><strong>Univ. of Tübingen</strong><span>Hosted by <a href="https://seongjoonoh.com/" target="_blank" rel="noreferrer">Prof. Seong Joon Oh</a> (with <a href="https://www.eml-munich.de/" target="_blank" rel="noreferrer">Prof. Zeynep Akata</a> in 2023)</span></div><ul class="visit-people"><li>Dongjun <span>25.05–07</span></li><li>Yeji <span>25.01–02</span></li><li>Yejin <span>25.01–02</span></li><li>Hyo Seo <span>23.07–08</span></li><li>Minyoung <span>25.01–02, 23.07–08</span></li></ul></li>
+          <li data-short="NAVER AI Lab"><div class="visit-place"><strong>NAVER AI Lab</strong><span>Research internship</span></div><ul class="visit-people"><li>Yeji <span>25.09–26.02</span></li><li>Hyo Seo <span>24.07–10</span></li></ul></li>
+          <li data-short="Michigan State"><div class="visit-place"><strong>Michigan State Univ.</strong><span>Hosted by <a href="https://lsjxjtu.github.io/" target="_blank" rel="noreferrer">Prof. Sijia Liu</a></span></div><ul class="visit-people"><li>Hyo Seo <span>24.10–25.04</span></li></ul></li>
+          <li data-short="CMU"><div class="visit-place"><strong>Carnegie Mellon Univ.</strong><span>IITP AI Intensive Education Program</span></div><ul class="visit-people"><li>Dongjun <span>24.09–25.02</span></li></ul></li>
         </ul>
-        <button type="button" class="toggle-list" id="visit-toggle" aria-expanded="false">Show all</button>
+        <button type="button" class="toggle-list" id="visit-toggle" aria-expanded="false" hidden>Show details</button>
         </div>
       </section>
 

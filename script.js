@@ -68,11 +68,45 @@
     setupCollapsible(newsList, newsToggle, 8);
   }
 
-  // A safety net only: a dozen hosts show before any of the older ones fold away.
+  // Visits open as one sentence naming every host, so the section stays
+  // short however many hosts there are; the full list (who, when,
+  // hosted by) replaces it under "Show details". Without JavaScript the full
+  // list simply shows.
   var visitList = document.getElementById("visit-list");
   var visitToggle = document.getElementById("visit-toggle");
-  if (visitList && visitToggle) {
-    setupCollapsible(visitList, visitToggle, 12);
+  var visitSummary = document.getElementById("visit-summary");
+  if (visitList && visitToggle && visitSummary) {
+    var names = Array.prototype.map.call(visitList.children, function (host) {
+      return host.dataset.short || host.querySelector("strong").textContent;
+    });
+    // the names start on their own line, so the roll reads as one block
+    visitSummary.appendChild(document.createTextNode("Our members have conducted research visits and internships at"));
+    visitSummary.appendChild(document.createElement("br"));
+    names.forEach(function (name, i) {
+      if (i > 0) {
+        visitSummary.appendChild(document.createTextNode(i === names.length - 1 ? ", and " : ", "));
+      }
+      var b = document.createElement("strong");
+      b.textContent = name;
+      visitSummary.appendChild(b);
+    });
+    visitSummary.appendChild(document.createTextNode("."));
+    visitSummary.hidden = false;
+
+    var detailsShown = false;
+    var renderVisits = function () {
+      // the details replace the grid rather than repeat every name under it
+      visitList.hidden = !detailsShown;
+      visitSummary.hidden = detailsShown;
+      visitToggle.textContent = detailsShown ? "Hide details" : "Show details";
+      visitToggle.setAttribute("aria-expanded", String(detailsShown));
+    };
+    visitToggle.hidden = false;
+    visitToggle.addEventListener("click", function () {
+      detailsShown = !detailsShown;
+      renderVisits();
+    });
+    renderVisits();
   }
 
   var pubList = document.getElementById("publication-list");

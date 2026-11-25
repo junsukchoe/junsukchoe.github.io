@@ -673,6 +673,31 @@ h3 {
   font-size: 0.78rem;
 }
 
+/* the one sentence naming every host, shown before the details; balanced so
+   a short last line never strands a single name */
+.visit-summary {
+  margin: 0 0 4px;
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  text-wrap: balance;
+}
+
+.visit-summary strong {
+  color: var(--ink);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.visit-summary + .visit-list {
+  margin-top: 18px;
+}
+
+.visit-list[hidden] {
+  display: none;
+}
+
 #equipment .roster-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
